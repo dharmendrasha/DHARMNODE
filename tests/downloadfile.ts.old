@@ -1,0 +1,10 @@
+import DownloadFile from '../src/controllers/crawl/downoadfile'
+import { expect } from 'chai'
+
+describe('String Operate Test', () => {
+  it('check file name are correctly returning ot not', () => {
+    const StringClass = new DownloadFile()
+    StringClass.fileLink = 'https://img-hw.xvideos-cdn.com/videos/thumbs169poster/74/f9/e5/74f9e5fb0a23a78fe57aa404314af7b2/74f9e5fb0a23a78fe57aa404314af7b2.15.jpg'
+    expect(StringClass.getFileName()).to.equal('74f9e5fb0a23a78fe57aa404314af7b274f9e5fb0a23a78fe57aa404314af7b2.15.jpg')
+  })
+})
