@@ -12,3 +12,4 @@ download/sugar/*
 *.3gp
 *.csv
 download/temp/*
+*.prod
