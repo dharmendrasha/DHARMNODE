@@ -1,20 +1,6 @@
 {
     "env": {
-      "MONGO_USER": "dharm",
-      "MONGO_PASSWORD": "Black9024!@",
-      "MONGO_DB": "mern",
-      "MONGO_SERVER":"cluster0.lhune.mongodb.net",
-      "PORT":4000,
-      "LOG_LEVEL":"error",
-      "SALT":"qwertyuiopasdfghjklzxcvbnm.!%$&*&^%*()$#.893256349810",
-      "MAIL_HOST" : "smtp.mailtrap.io",
-      "MAIL_PORT" : "2525",
-      "MAIL_USER" : "59fd7a2919f440",
-      "MAIL_PASS" : "1d91fb3e953fca",
-      "MAIL_FROM" : "admin@host.com",
-      "MAIL_NAME" : "admin",
-      "facebook_app_id" : "697962680902377",
-      "facebook_app_secret" : "4275350eaa3bfad5693f9aa6d1458553"
+      
     },
     "--max-old-space-size":"9000"
 }

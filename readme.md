@@ -37,6 +37,7 @@ Built in apis instructions.
 <li>Full authentication with login and registration via Auth0</li>
 <li>Upload files api</li>
 <li>Form validation</li>
+<li>Built in logging function</li>
 </ol>
 </h3>
 
