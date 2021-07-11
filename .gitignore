@@ -13,3 +13,6 @@ download/sugar/*
 *.csv
 download/temp/*
 *.prod
+
+.env
+nodemon.json
