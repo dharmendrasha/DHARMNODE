@@ -2,8 +2,6 @@ import { TZ } from './config/index'
 import express, { Express, Request, Response } from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
-import todoRoutes from './routes/index'
-import Controller from './controllers/Index'
 
 // body parser
 import bodyParser from 'body-parser'
@@ -15,7 +13,6 @@ import * as form_req from 'express-form-data'
 // auth import
 import authRoutes from './routes/auth'
 
-
 // save file
 import fileRoutes from './routes/file'
 
@@ -26,12 +23,20 @@ import { ValidationError } from 'express-validation'
 // eslint-disable-next-line camelcase
 import method_override from 'method-override'
 
+import Controller from './controllers/Index'
+
 // error logging
 import pino from 'pino'
 import expressPino from 'express-pino-logger'
+require('dotenv').config()
+// import * as conf from './config/index'
+
 process.env.TZ = TZ
 
-const logger = pino({ level: process.env.LOG_LEVEL || 'info' })
+const logger = pino({
+  level: process.env.LOG_LEVEL || 'info',
+  prettyPrint: { colorize: true }
+})
 const expressLogger = expressPino({ logger })
 
 const app: Express = express()
@@ -57,14 +62,10 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(cors())
 
-app.use(todoRoutes)
-
 // auth group
 app.use('/auth', authRoutes)
 
-
 app.use('/file', fileRoutes)
-
 
 app.use('/upload/:filename', async (req: Request, res : Response) : Promise<void> => {
   return res.download(process.cwd() + '/upload/' + req.params.filename)
@@ -96,6 +97,10 @@ const uri: string = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO
 const options = { useNewUrlParser: true, useUnifiedTopology: true }
 mongoose.set('useFindAndModify', false)
 
+/**
+ * @param  {String} uri
+ * @param  {mongoose.ConnectOptions} options
+ */
 mongoose.connect(uri, options).then(() =>
   app.listen(PORT, () =>
     console.log(`Server running on http://localhost:${PORT}`)

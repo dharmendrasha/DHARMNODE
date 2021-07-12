@@ -1,4 +1,3 @@
-import * as ICrawl from '../controllers/crawl/interface'
 export const SALT : string = process.env.SALT || 'qwertyuiopasdfghjklzxcvbnm1234567890!@#$%^&*())(*&^%$#@!ZXCVBNMPLKNBVCSERTGHJIUYT'
 export const TOKEN_EXPIRE : number = 86400
 export const MAIL_CONF : object = {
@@ -27,11 +26,3 @@ export const EMAIL : string = 'dharmendrashah2002@yahoo.com'
 export const GENDER : String[] = ['Male', 'Female', 'Both', 'None']
 
 export const TYPE : String[] = ['Sugar Daddy', 'None', 'Sugar Baby', 'Sugar Baby Male', 'Sugar Momma', 'Gay Sugar Daddy', 'Women For Extra Marital', 'Man For Extra Marital']
-
-export const SSH : ICrawl.ISshConfig = {
-  host: '31.220.49.111',
-  username: 'root',
-  port: 22,
-  password: 'Dharmendra9024!@',
-  tryKeyboard: true
-}
