@@ -85,7 +85,7 @@
     "extract-zip": "^2.0.1",
     "formidable": "^1.2.2",
     "fs-extra": "^9.1.0",
-    "got": "^11.8.2",
+    "got": "^11.8.5",
     "htmlparser2": "^6.1.0",
     "jsonwebtoken": "^8.5.1",
     "locutus": "^2.0.15",
